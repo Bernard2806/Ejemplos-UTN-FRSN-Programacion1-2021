@@ -1,0 +1,36 @@
+# ejercicios practica 2
+1) crear una funcion que reciba un caracter en minuscula y devuelva su conversion a mayuscula.  
+2) crear la funcion inversa del punto anterior. Mayuscula a minuscula. 
+3) Realizar un programa que solicite 20 números y los almacene en un array (vector). 
+Posteriormente se pedirá el ingreso de un número y se debe informar si el mismo se encuentra en el vector o no. 
+En caso que se encuentre informar cuantas veces figura.
+4) 
+
+
+# ejemplos: 
+funcion obtener_cuadrado
+funcion calcular_hipotenusa 
+
+sumar numeros de un array: 
+  int a[] = {1, 2, 3, 4, 5};
+  long suma(int *datos, int largo)
+  //long suma(int datos[], int largo)
+  {
+    long res = 0;
+    for(int i = 0; i<largo; i++) {
+      res += datos[i];
+    }
+    return res;
+  }
+  suma(a, 5); 
+
+
+# fechas TPS y parcial
+06/05/2021 TP1
+20/05/2021 TP2
+10/06/2021 TP3
+24/06/2021 Parcial 
+
+
+
+

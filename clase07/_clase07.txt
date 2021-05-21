@@ -1,0 +1,32 @@
+# clase 06 20/05/2021 
+
+## Repaso: 
+
+
+## temas nuevos: 
+
+fopen()
+fclose()
+feof(arch) : retorna True si el puntero llegó a fin de archivo 
+
+fwrite() : permite escribir 1 caracter, una estruct, 
+fread() : 
+
+fgets() :  lee caracteres del stream especificado. puede ser puntero a FILE o stdin.  lee hasta ENTER o limite del array 
+
+fputs() 
+
+ftell() : devuelve bytes en el que esta el puntero 
+fseek() : permite cambiar la posicion del puntero 
+
+
+
+### modos de apertura de archivo: 
+w+b : Crea un archivo sobre el que podemos grabar registros
+y, leer y modifi car registros ya grabados. Si dentro de la
+carpeta existe un archivo con igual nombre entonces, al
+abrirlo, borrará todo su contenido dejándolo con 0 bytes.
+r+b : Idem anterior solo que si en la carpeta ya existe un archivo
+con igual nombre entonces no borrará su contenido.
+
+

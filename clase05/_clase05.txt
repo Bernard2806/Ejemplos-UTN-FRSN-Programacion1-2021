@@ -1,0 +1,27 @@
+# clase 5 06/05/2021 
+- repaso recursividad 
+- leer/escribir en archivos de texto.
+fopen(), fclose(), fprinf(), getc(), fgets(), fscanf() 
+- pasar parametros al programa. y como ejecutar desde consola. Argumentos por linea de comando. 
+- operaciones con strings: agregar, buscar, insertar
+ 
+- también usamos: funciones/procedimientos, punteros, paso de parametros por valor y referencia. 
+
+TAREA: agregar 2 nuevas funciones al programa 'operaciones_array.c':
+int eliminar_x_valor(....)  
+  buscar valor dentro del array y quitarlo. 
+int eliminar_x_indice(....) 
+  eliminar registro del array segun su indice. 
+
+
+# proximas : 
+.- algoritmos de búsqueda: 
+.- tipos definidos struct 
+.- algoritmos de ordenamiento: 
+
+.- struct en archivos 
+.- corte de control
+
+.- debugging 
+.- git 
+

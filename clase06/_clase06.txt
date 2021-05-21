@@ -1,0 +1,49 @@
+# clase 06 13/05/2021 
+
+## Repaso: 
+  - operaciones con strings: agregar, buscar, insertar
+
+## resolver tarea 
+
+## temas nuevos: 
+.- algoritmos de ordenamiento: buble sort 
+.- algoritmos de búsqueda: 
+https://visualgo.net/en
+https://algorithm-visualizer.org/ 
+.- tipos definidos por nosotros: struct 
+
+
+.- tipos definidos por nosotros: Union 
+.- struct en archivos 
+.- corte de control
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://www.tutorialspoint.com/cprogramming/c_unions.htm
+https://www.programiz.com/c-programming/c-structures
+https://www.geeksforgeeks.org/union-c/
+https://www.fing.edu.uy/tecnoinf/mvd/cursos/prinprog/material/teo/prinprog-teorico08.pdf 
+
+https://www.cs.usfca.edu/~galles/visualization/Algorithms.html 
+
+
