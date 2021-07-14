@@ -1,0 +1,109 @@
+# clase 09 03/06/2021 
+
+## Repaso:
+
+
+## temas: 
+- <ctype.h> Character classification and conversion : 
+- archivos
+- Asignación dinámica de memoria con las funciones
+malloc() y free() de stdlib.
+- git  (TP3) 
+
+10/06/2021 – entrega TP3 - crear proyecto en Git, subir a github 
+24/06/2021 – Parcial  - 
+01/07/2021 – recuperatorio parcial 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+size_t  : que es? como se usa? cuando? ventajas/desventajas
+
+- unions 
+enumeraciones 
+arrays de structs 
+- campos de bits, operadores de bits 
+
+- aritmetica de punteros 
+punteros a estructuras
+punteros a funcion 
+
++ otras funciones de biblioteca estandar
+<string.h> String handling : 
+atoi, atol, atof 
+<ctype.h> Character classification and conversion : 
+isalnum, isalpha, isblank, iscntrl, isdigit, isgraph, islower, isprint, ispunct, isspace, isupper,
+and isxdigit, and conversions toupper and tolower.
+<time.h> Handling time : 
+
++ archivos
+sizeof
+fseek() : cambio de la posición del cursor
+ftell() : obtención el punto de acceso actual
+
+SEEK_SET (comienzo del archivo, byte 0)
+SEEK_CUR (posición actual)
+SEEK_END (final del archivo)
+
+archivos binarios: 
+  fread - fwrite 
+archivos secuenciales: 
+  putc - fputc 
+  getc - fgetc 
+  fputs - fgets
+  fprintf - fscanf 
+  feof 
+  rewind 
+fgetwc 
+
+- Asignación dinámica de memoria con las funciones
+malloc() y free() de stdlib.
+calloc() realloc() 
+
+- mas ejemplos con archivos. apareo de archivos 
+- mas ejemplos con corte de control. 
+
+- listas enlazadas, operaciones 
+- pilas y colas 
+
+- arboles ?? : NO 
+
+

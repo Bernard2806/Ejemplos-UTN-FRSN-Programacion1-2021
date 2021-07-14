@@ -1,0 +1,29 @@
+# clase 08 27/05/2021 
+
+## Repaso: 
+
+// Clase 8 - ejercicio 1 : repaso variables, punteros
+// Clase 8 - ejercicio 2 : repaso funciones, paso de parametros por valor y referencia
+// Clase 8 - ejercicio 3 : repaso: array 
+// Clase 8 - ejercicio 4 : repaso: array 
+// Clase 8 - ejercicio 5 : repaso: arrays como parametros en funciones 
+// Clase 8 - ejercicio 6 : repaso: cadenas de caracteres (strings)
+// Clase 8 - ejercicio 7 : repaso: struct
+// Clase 8 - ejercicio 8 : repaso: uso de strtok()
+
+
+
+char *strtok(char *str, const char *delim)
+strtok() : breaks string str into a series of tokens using the delimiter delim.
+
+strdup() : function returns a pointer to a new string which is a duplicate of the string s.
+
+atoi() : devuelve el entero representado en el string 
+  strcpy(str, "98993489"); // copiamos string a str 
+  val = atoi(str);  
+
+
+## challenges 
+
+
+

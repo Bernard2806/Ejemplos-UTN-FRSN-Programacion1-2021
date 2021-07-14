@@ -9,7 +9,7 @@ struct Books {
 };
 
 /* function declaration */
-void printBook( struct Books *book );
+void printLibro( struct Books *book );
 
 int main( ) {
 
@@ -29,15 +29,15 @@ int main( ) {
    Book2.book_id = 6495700;
  
    /* print Book1 info by passing address of Book1 */
-   printBook( &Book1 );
+   printLibro( &Book1 );
 
    /* print Book2 info by passing address of Book2 */
-   printBook( &Book2 );
+   printLibro( &Book2 );
 
    return 0;
 }
 
-void printBook( struct Books *book ) {
+void printLibro( struct Books *book ) {
 
    printf( "Book title : %s\n", book->title);
    printf( "Book author : %s\n", book->author);

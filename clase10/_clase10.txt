@@ -1,0 +1,29 @@
+# clase 10 10/06/2021 
+
+24/06/2021 – Parcial  - 
+01/07/2021 – recuperatorio parcial 
+
+## Repaso, dudas y preguntas 
+
+- Archivos 
+fgetc( stdin ) == getchar();  // leer un caracter 
+fputc( 'a', stdout ) == putchar( 'a' ); // escribir un caracter
+fgets() == gets(); // leer una línea
+fputs() == puts(); // escribir una línea
+
+scanf() == fscanf()
+printf() == fprintf()
+
+fread() 
+fwrite()
+
+
+## temas nuevos : 
+- Estructuras de datos (dinamicas) en C 
+listas enlazadas/ligadas
+pilas 
+colas 
+
+
+
+
