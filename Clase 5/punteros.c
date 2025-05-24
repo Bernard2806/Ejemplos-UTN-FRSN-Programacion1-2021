@@ -1,26 +1,26 @@
 #include <stdio.h>
 
-
 int main(int argc, char const *argv[])
 {
-  int longitud = 0; 
-  int *pos ;  // declaro puntero a int 
+  int longitud = 0; // Variable entera llamada 'longitud'
+  int *pos;         // Declaración de un puntero a entero
 
-  pos = &longitud; // asignarle una direccion de memoria, el operador '&' nos permite eso
-  // pos contiene la dir. de memoria de la variable longitud. 
+  // Asignamos a 'pos' la dirección de memoria de 'longitud'
+  pos = &longitud;
 
-  // pos : contiene una direccion de memoria
-  // *pos : accedemos al contenido de la dir. de memoria de pos 
-  
-  // cambio valor a donde apunta *pos 
-  *pos = 44;  
-  printf("longitud %d\n", longitud);  // 44
-  printf("pos %d\n\n", *pos);         // 44
+  // Explicación:
+  // pos contiene la dirección de memoria de la variable 'longitud'
+  // *pos nos permite acceder al contenido almacenado en esa dirección, es decir, al valor de 'longitud'
 
+  // Cambiamos el valor de 'longitud' a través del puntero
+  *pos = 44;
+  printf("longitud = %d\n", longitud); // Imprime 44
+  printf("*pos = %d\n\n", *pos);       // También imprime 44 porque *pos accede a 'longitud'
 
-  longitud = 49; 
-  printf("longitud %d\n", longitud);   // 49
-  printf("pos %d\n", *pos);            // 49
-  
+  // Cambiamos directamente el valor de 'longitud'
+  longitud = 49;
+  printf("longitud = %d\n", longitud); // Imprime 49
+  printf("*pos = %d\n", *pos);         // También imprime 49 porque *pos sigue apuntando a 'longitud'
+
   return 0;
 }

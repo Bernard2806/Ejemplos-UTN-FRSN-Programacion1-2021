@@ -1,22 +1,32 @@
-#include <stdio.h>  
+#include <stdio.h>
 
-
-long int fibonacci( numero )
+// Función recursiva para calcular el número Fibonacci
+// Recibe un entero 'numero' y devuelve un long int con el resultado
+long int fibonacci(int numero)
 {
-  if ( numero < 2) // Condicion de corte
-    return numero ;
-  
-  return fibonacci( numero-1 ) + fibonacci( numero-2 ) ; // Llamado recursivo para numero -1 y luego para numero -2
+  if (numero < 2) // Caso base: fibonacci(0) = 0, fibonacci(1) = 1
+    return numero;
+
+  // Llamada recursiva: fibonacci(n) = fibonacci(n-1) + fibonacci(n-2)
+  return fibonacci(numero - 1) + fibonacci(numero - 2);
 }
 
 int main(int argc, char const *argv[])
 {
-  int numero ;
+  int numero;
 
-  scanf("%i" ,& numero );
+  printf("Ingrese un número para calcular su Fibonacci: ");
+  scanf("%d", &numero);
 
-  long int resultado = fibonacci( numero );
-  printf("El Fibonacci de %i es %lu",numero , resultado );
+  // Validar que el número no sea negativo para evitar resultados indefinidos
+  if (numero < 0)
+  {
+    printf("Error: el número debe ser mayor o igual a 0.\n");
+    return 1;
+  }
+
+  long int resultado = fibonacci(numero);
+  printf("El Fibonacci de %d es %ld\n", numero, resultado);
 
   return 0;
 }

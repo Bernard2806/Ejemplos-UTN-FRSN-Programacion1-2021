@@ -1,55 +1,61 @@
 #include <stdio.h>
 
-// iterativa 
-void imprimir_vector( char *string )
+// Función iterativa que imprime un string carácter por carácter
+void imprimir_vector(char *string)
 {
-  int i;
-
-  i = 0;
-
-  while ( string[i] != '\0' ){
-    printf(" %c",string [i]);
-    i += 1;
-  }
-
-}
-
-
-// recursiva 
-void imprimir_vector_rec( const char * string , int i)
-{
-  if ( string[i] == '\0 ' ) {
-    return ;
-  } else {
+  int i = 0;
+  // Mientras no lleguemos al carácter nulo '\0'
+  while (string[i] != '\0')
+  {
     printf(" %c", string[i]);
-    imprimir_vector_rec( string, i+1 ) ;
+    i++;
   }
 }
 
-// recursiva : imprime en orden inverso 
-void imprimir_vector_inv_rec( const char * string , int i)
+// Función recursiva que imprime un string carácter por carácter desde el índice i
+void imprimir_vector_rec(const char *string, int i)
 {
-  if ( string[i] == '\0 ' ) {
-    return ;
-  } else {
-    imprimir_vector_inv_rec( string , i+1) ;
-    printf (" %c",string[i]);
+  // Caso base: si encontramos el carácter nulo '\0', terminamos la recursión
+  if (string[i] == '\0')
+  {
+    return;
+  }
+  else
+  {
+    printf(" %c", string[i]);
+    imprimir_vector_rec(string, i + 1);
+  }
+}
+
+// Función recursiva que imprime un string en orden inverso desde el índice i
+void imprimir_vector_inv_rec(const char *string, int i)
+{
+  // Caso base: si encontramos el carácter nulo '\0', terminamos la recursión
+  if (string[i] == '\0')
+  {
+    return;
+  }
+  else
+  {
+    imprimir_vector_inv_rec(string, i + 1);
+    printf(" %c", string[i]);
   }
 }
 
 int main(int argc, char const *argv[])
 {
-  /* code */
-  char str[20] = "programacion1 "; 
+  char str[20] = "programacion1"; // Nota: quité espacio extra al final
 
-  printf("imprimir_vector: "); 
-  imprimir_vector(str); 
+  printf("imprimir_vector: ");
+  imprimir_vector(str);
 
-  printf("\nimprimir_vector_rec: "); 
-  imprimir_vector_rec(str, 0); 
-  
-  printf("\nimprimir_vector_inv_rec: "); 
-  imprimir_vector_inv_rec(str,0);
+  printf("\nimprimir_vector_rec: ");
+  imprimir_vector_rec(str, 0);
+
+  printf("\nimprimir_vector_inv_rec: ");
+  imprimir_vector_inv_rec(str, 0);
+
+  printf("\n");
 
   return 0;
 }

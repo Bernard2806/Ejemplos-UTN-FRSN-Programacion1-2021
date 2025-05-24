@@ -1,35 +1,48 @@
 #include <stdio.h>
 
-// version Iterativa 
-int longitud( const char * string )
+// Versión iterativa para calcular la longitud de una cadena de caracteres
+int longitud(const char *string)
 {
-  int i;
-  int longitud ;
+  int i = 0;
+  int longitud = 0;
 
-  longitud = 0;
-  i = 0;
-
-  while ( string [i] != '\0 ' ){
-    longitud += 1;
-    i += 1;
+  // Iterar mientras no se encuentre el carácter nulo '\0' que marca el final de la cadena
+  while (string[i] != '\0')
+  {
+    longitud++; // Incrementar contador de longitud
+    i++;        // Avanzar al siguiente carácter
   }
 
-  return longitud ;
+  return longitud; // Devolver la longitud calculada
 }
 
-// version Recursiva 
-int longitud_rec ( const char * string , int i)
+// Versión recursiva para calcular la longitud de una cadena de caracteres
+// 'i' es el índice actual que se está evaluando
+int longitud_rec(const char *string, int i)
 {
-  if ( string [i]== '\0 ') {
+  // Caso base: si se encontró el carácter nulo, longitud = 0
+  if (string[i] == '\0')
+  {
     return 0;
-  } else {
-    return ( 1 + longitud_rec( string, i+1 ) ) ;
+  }
+  else
+  {
+    // Sumar 1 por el carácter actual y llamar recursivamente para el siguiente
+    return 1 + longitud_rec(string, i + 1);
   }
 }
-
 
 int main(int argc, char const *argv[])
 {
-  /* code */
+  const char *texto = "Hola mundo";
+
+  // Usar versión iterativa
+  int len_iter = longitud(texto);
+  printf("Longitud (iterativa) de \"%s\" es: %d\n", texto, len_iter);
+
+  // Usar versión recursiva (se inicia en índice 0)
+  int len_rec = longitud_rec(texto, 0);
+  printf("Longitud (recursiva) de \"%s\" es: %d\n", texto, len_rec);
+
   return 0;
 }
