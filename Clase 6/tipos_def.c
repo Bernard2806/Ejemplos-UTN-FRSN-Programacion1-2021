@@ -1,12 +1,15 @@
 #include <stdio.h>
 
-// definimos un nuevo tipo de datos 'Entero' 
+// Creamos un alias para el tipo de dato 'int' y lo llamamos 'Entero'
 typedef int Entero;
 
 int main()
 {
-  // declaro una variable de tipo Entero
+  // Declaramos una variable usando el alias 'Entero'
   Entero e = 5;
-  printf("%d\n",e);
+
+  // Mostramos el valor por pantalla
+  printf("%d\n", e);
+
   return 0;
 }

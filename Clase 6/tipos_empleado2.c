@@ -1,8 +1,10 @@
 #include <stdio.h>
+#include <string.h> // Para poder usar strcpy
 
-typedef long Fecha ; 
+// Creamos un alias 'Fecha' para el tipo long (representa una fecha como AAAAMMDD)
+typedef long Fecha;
 
-// estructura o registro 
+// Definimos una estructura para representar un empleado
 typedef struct Empleado
 {
   int matricula;
@@ -10,24 +12,33 @@ typedef struct Empleado
   Fecha fechaIngreso;
 } Empleado;
 
-void agregarEmpleado(Empleado emps[], int* len, int leg, char* nom, Fecha f)
+// Función para agregar un empleado al arreglo
+void agregarEmpleado(Empleado emps[], int *len, int leg, char *nom, Fecha f)
 {
-  emps[*len].matricula=leg;
-  strcpy(emps[*len].nombre,nom);
-  emps[*len].fechaIngreso=f;
-  *len++;
+  emps[*len].matricula = leg;
+  strcpy(emps[*len].nombre, nom);
+  emps[*len].fechaIngreso = f;
+  (*len)++; // Corregido: hay que incrementar el valor apuntado
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
-  Empleado aEmp[100];
-  int len=0;
+  Empleado aEmp[100]; // Arreglo para guardar hasta 100 empleados
+  int len = 0;        // Cantidad actual de empleados cargados
 
-  agregarEmpleado(aEmp,&len,23213,"Juan",20101202);
-  agregarEmpleado(aEmp,&len,11243,"Pablo",20081005);
-  agregarEmpleado(aEmp,&len,10021,"Pedro",20050422);
+  // Agregamos algunos empleados al arreglo
+  agregarEmpleado(aEmp, &len, 23213, "Juan", 20101202);
+  agregarEmpleado(aEmp, &len, 11243, "Pablo", 20081005);
+  agregarEmpleado(aEmp, &len, 10021, "Pedro", 20050422);
+
+  // Mostramos los empleados cargados
+  for (int i = 0; i < len; i++)
+  {
+    printf("Empleado #%d\n", i + 1);
+    printf("  Matrícula: %d\n", aEmp[i].matricula);
+    printf("  Nombre: %s\n", aEmp[i].nombre);
+    printf("  Fecha de ingreso: %ld\n\n", aEmp[i].fechaIngreso);
+  }
 
   return 0;
 }
-
-

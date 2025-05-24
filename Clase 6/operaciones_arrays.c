@@ -1,135 +1,119 @@
 #include <stdio.h>
 
-// agregar - Permite agregar un elemento al final del array.
+// agregar - agrega un elemento al final del array
 int agregar(int a[], int *pos, int valor)
 {
-  a[*pos] = valor; 
-  *pos += 1;  // 
-} 
+  a[*pos] = valor;
+  (*pos)++; // aumento la cantidad de elementos
+  return 1; // opcional, devuelve éxito
+}
 
-
-// buscar - Permite determinar si un array contiene un determinado elemento.
-// devolver la posicion donde lo encontro o -1 si no lo encuentra
+// buscar - busca un valor en el array
+// devuelve posición si lo encuentra o -1 si no
 int buscar(int a[], int cant, int valor)
 {
-  int i = 0; 
-
-  while( i<cant ) {
-    if (a[i] == valor ) {
-      return i;
-    } 
-    i++;
-  }
-  // cond ? sent_V : sent_F;
-
-  return -1; 
-}
-
-
-// buscar y agregar si no encuentra , y devuelva posicion en el array 
-int buscar_y_agregar(int a[], int *pos, int valor) 
-{
-  int posicion = 0; 
-
-  posicion = buscar(a, *pos, valor); 
-
-  if (posicion == -1) {
-    agregar(a, pos, valor);
-    posicion = *pos - 1 ; 
-  }
-
-  return posicion; 
-
-}
-
-
-// insertar - Permite insertar un elemento en una determinada posicion del array.
-// int a = { 23, 4, 6, 8, 42 } ; 
-//           0   1  2  3   4
-// agregar nro 10 en pos= 3
-// { 23, 4, 6, 10, 8, 42 } ; 
-//   0   1  2   3  4   5 
-int insertar(int a[], int *pos, int valor, int pos_a_insertar) 
-{
-  for (int i = *pos-1; i >= pos_a_insertar; i--)
+  for (int i = 0; i < cant; i++)
   {
-    a[i+1] = a[i]; // mueve los elementos a la siguiente posicion 
+    if (a[i] == valor)
+    {
+      return i;
+    }
   }
-  // termina en la posicion a insertar 
-  a[pos_a_insertar] = valor; 
-  *pos += 1;  // longitud del array (cant de elementos)
-  
-} 
+  return -1;
+}
 
+// buscar_y_agregar - busca el valor y si no está lo agrega
+// devuelve la posición donde está o fue agregado
+int buscar_y_agregar(int a[], int *pos, int valor)
+{
+  int posicion = buscar(a, *pos, valor);
+
+  if (posicion == -1)
+  {
+    agregar(a, pos, valor);
+    posicion = *pos - 1;
+  }
+
+  return posicion;
+}
+
+// insertar - inserta un valor en una posición específica
+int insertar(int a[], int *pos, int valor, int pos_a_insertar)
+{
+  for (int i = *pos - 1; i >= pos_a_insertar; i--)
+  {
+    a[i + 1] = a[i]; // corro los elementos a la derecha
+  }
+  a[pos_a_insertar] = valor;
+  (*pos)++;
+  return 1; // opcional
+}
+
+// imprimir - muestra el contenido del array
 void imprimir(int a[], int len)
 {
   for (int i = 0; i < len; i++)
   {
-    printf("Posicion %d = %d \n", i+1, a[i]); 
+    printf("Posicion %d = %d\n", i + 1, a[i]);
   }
-
 }
 
-
-// eliminar por indice 
-// len = lengh longitud 
-// pos = indice del array 
-void eliminar_x_indice(int a[], int* len, int pos) 
+// eliminar_x_indice - elimina el elemento en la posición dada
+void eliminar_x_indice(int a[], int *len, int pos)
 {
-  for(int i = pos; i < *len-1; i++) {
-    a[i] = a[i+1];
+  for (int i = pos; i < *len - 1; i++)
+  {
+    a[i] = a[i + 1];
   }
-  *len = *len - 1;
+  (*len)--;
 }
 
-
-int main(int argc, char const *argv[])
+int main()
 {
-  int numeros[50] ; // capacidad (50)
-  int longitud = 0; // lengh : longitud 
+  int numeros[50];  // array con capacidad para 50 elementos
+  int longitud = 0; // cantidad actual de elementos
 
-  // - Ejemplo 1
-  agregar(numeros, &longitud, 35); 
-  agregar(numeros, &longitud, 45); 
-  agregar(numeros, &longitud, 65); 
-  agregar(numeros, &longitud, 32); 
-  agregar(numeros, &longitud, 17); 
-  agregar(numeros, &longitud, 88); 
+  // Ejemplo 1: agrego algunos números
+  agregar(numeros, &longitud, 35);
+  agregar(numeros, &longitud, 45);
+  agregar(numeros, &longitud, 65);
+  agregar(numeros, &longitud, 32);
+  agregar(numeros, &longitud, 17);
+  agregar(numeros, &longitud, 88);
 
-  // mostramos contenido del array en pantalla 
+  // Imprimo el array
   imprimir(numeros, longitud);
 
-  // - ejemplo 2
-  int pos_encontrado = 0; 
-  int valor_a_buscar = 0; 
-
+  // Ejemplo 2: buscar un valor
+  int valor_a_buscar;
   printf("Ingrese valor a buscar: ");
-  scanf("%d", &valor_a_buscar); 
-  pos_encontrado = buscar(numeros, longitud, valor_a_buscar);
-  if (pos_encontrado == -1) {
-    printf("Valor NO encontrado"); 
-  } else {
-    printf("Valor encontrado en posicion: %d", pos_encontrado+1); 
+  scanf("%d", &valor_a_buscar);
+
+  int pos_encontrado = buscar(numeros, longitud, valor_a_buscar);
+  if (pos_encontrado == -1)
+  {
+    printf("Valor NO encontrado\n");
+  }
+  else
+  {
+    printf("Valor encontrado en posicion: %d\n", pos_encontrado + 1);
   }
 
-  // - ejemplo 3 : buscar y agregar si no lo encontro 
-  printf("\nIngrese valor a buscar/Agregar: \n");
-  scanf("%d", &valor_a_buscar); 
-  pos_encontrado = buscar_y_agregar(numeros, &longitud, valor_a_buscar); 
-  printf("Valor encontrado/agregado en posicion: %d\n\n", pos_encontrado+1); 
- 
-  // - ejemplo 4: 
-  insertar(numeros, &longitud, 99, 2); 
-  printf("\n\n"); 
+  // Ejemplo 3: buscar y agregar si no existe
+  printf("Ingrese valor a buscar/agregar: ");
+  scanf("%d", &valor_a_buscar);
+  pos_encontrado = buscar_y_agregar(numeros, &longitud, valor_a_buscar);
+  printf("Valor encontrado/agregado en posicion: %d\n", pos_encontrado + 1);
+
+  // Ejemplo 4: insertar valor 99 en la posición 2 (tercer lugar)
+  insertar(numeros, &longitud, 99, 2);
+  printf("\nArray luego de insertar 99 en posición 3:\n");
   imprimir(numeros, longitud);
 
-  // - ejemplo 5: (eliminar por indice)
-  eliminar_x_indice(numeros, &longitud, 7); 
-  printf("Luego de eliminar: \n"); 
-
-  // mostramos contenido del array en pantalla 
+  // Ejemplo 5: eliminar elemento en la posición 7 (índice 7)
+  eliminar_x_indice(numeros, &longitud, 7);
+  printf("Luego de eliminar el elemento en posición 8:\n");
   imprimir(numeros, longitud);
-  
- 
+
   return 0;
 }

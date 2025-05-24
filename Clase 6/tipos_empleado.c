@@ -1,26 +1,31 @@
 #include <stdio.h>
+#include <string.h>  // Necesario para usar strcpy
 
-typedef long Fecha ; 
+// Creamos un alias para el tipo de dato long y lo llamamos 'Fecha'
+typedef long Fecha;
 
-// estructura o registro 
+// Definimos la estructura Empleado
 typedef struct Empleado
 {
-  int matricula;
-  char nombre[20];
-  Fecha fechaIngreso;
+    int matricula;
+    char nombre[20];
+    Fecha fechaIngreso;
 } Empleado;
 
-int main(int argc, char const *argv[])
+int main()
 {
+    // Declaramos una variable de tipo Empleado
+    Empleado e;
 
-  Empleado e; 
-  // e.matricula = 31234; // asigno la matricula
-  // strcpy(e.nombre, "Juan"); // asigno el nombre
-  // e.fechaIngreso = 20000628; // asigno la fecha
-  // // 
-  // printf("%s", e.nombre);
+    // Cargamos los datos del empleado
+    e.matricula = 31234;
+    strcpy(e.nombre, "Juan");
+    e.fechaIngreso = 20000628;  // Formato AAAAMMDD (año, mes, día)
 
-  return 0;
+    // Mostramos la información
+    printf("Nombre: %s\n", e.nombre);
+    printf("Matrícula: %d\n", e.matricula);
+    printf("Fecha de ingreso: %ld\n", e.fechaIngreso);
+
+    return 0;
 }
-
-
