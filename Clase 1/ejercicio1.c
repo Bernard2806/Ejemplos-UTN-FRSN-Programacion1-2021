@@ -4,7 +4,7 @@
 1. Leer dos valores enteros e informar su suma.
 */
 
-void main()
+int main()
 {
   // Declaramos dos variables enteras para guardar los valores ingresados por el usuario
   int valor1;
@@ -20,4 +20,6 @@ void main()
 
   // Mostramos por pantalla la suma de los dos valores
   printf("Suma = %d \n", valor1 + valor2);
+
+  return 0; // Indicamos que el programa terminó correctamente
 }

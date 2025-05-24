@@ -6,7 +6,7 @@ siguiente formato: aaaammdd
 Se pide informar por separado el día, el mes y el año de la fecha ingresada.
 */
 
-void main()
+int main()
 {
   // Variable donde se guarda la fecha completa (en formato entero: aaaammdd)
   int fecha;
@@ -36,4 +36,6 @@ void main()
 
   // Mostramos la fecha en formato dd/mm/aaaa
   printf("%d/%d/%d", dia, mes, anio);
+
+  return 0; // Indicamos que el programa terminó correctamente
 }

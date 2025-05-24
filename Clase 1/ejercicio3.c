@@ -4,7 +4,7 @@
 3. Dado un valor numérico entero, informar si es par o impar.
 */
 
-void main()
+int main()
 {
   // Variable para guardar el número ingresado por el usuario
   int valor1;
@@ -31,4 +31,6 @@ void main()
     // Si el resto es cero, es par
     printf("Numero PAR");
   }
+
+  return 0; // Indicamos que el programa terminó correctamente
 }

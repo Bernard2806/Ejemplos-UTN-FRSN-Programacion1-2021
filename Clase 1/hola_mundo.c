@@ -5,7 +5,7 @@
 #define PI 3.14159 // Definimos PI como constante (sin el signo igual)
 
 // Función principal del programa
-int main(void)
+int main()
 {
   /*
     Esto es un comentario de varias líneas.

@@ -4,7 +4,7 @@
 2. Leer dos valores numéricos enteros e informar su división.
 */
 
-void main()
+int main()
 {
   // Declaramos dos variables enteras para los valores que ingresa el usuario
   int valor1;
@@ -36,4 +36,6 @@ void main()
 
   // Ahora sí, se hace la división con decimales y se muestra con dos cifras decimales
   printf("Division = %6.2f \n", resultado);
+
+  return 0; // Indicamos que el programa terminó correctamente
 }

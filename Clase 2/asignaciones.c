@@ -1,21 +1,29 @@
-#include <stdio.h>
+#include <stdio.h> // Incluye la librería estándar para poder usar funciones como printf
 
-main()
+int main()
 {
-  int e,f; 
-  e = f; // asigna el valor de f a e
-  e += f; // e = e + f
-  e -= f; // e = e - f
-  e *= f; // e = e * f
+  int e, f; // Declaramos dos variables enteras: e y f
+  e = f;    // Le asignamos a e el valor que tenga f (¡ojo! f no tiene valor aún)
+  e += f;   // Le sumamos a e el valor de f (lo mismo que escribir e = e + f)
+  e -= f;   // Le restamos a e el valor de f (e = e - f)
+  e *= f;   // Multiplicamos e por f (e = e * f)
 
-  int a, b, c, d; 
-  a = 0; b = 0; c = 0; d = 0;
-  e = a++; // a = a + 1, Post incremento, e = 0, a = 1
-  e = ++b; // b = b + 1, Pre incremento, e = 1, b = 1
-  e = c--; // c = c - 1, Post decremento, e = 0, c = -1
-  e = --d; // d = d - 1, Pre decremento, e = -1, d = -1
+  // Ahora declaramos más variables
+  int a, b, c, d;
+  a = 0; // Inicializamos a en 0
+  b = 0; // Inicializamos b en 0
+  c = 0; // Inicializamos c en 0
+  d = 0; // Inicializamos d en 0
 
-  a = b = c = d = e = f = 1; // usa la propagación para asignar varias
-                             // variables a la vez.
-  
+  // Probamos los operadores de incremento y decremento
+
+  e = a++; // Post-incremento: primero e toma el valor de a (0), y después a se incrementa (a queda en 1)
+  e = ++b; // Pre-incremento: primero b se incrementa (b queda en 1), y después ese valor se asigna a e (e = 1)
+  e = c--; // Post-decremento: primero e toma el valor de c (0), y después c se decrementa (c queda en -1)
+  e = --d; // Pre-decremento: primero d se decrementa (d queda en -1), y luego ese valor se asigna a e (e = -1)
+
+  // Asignamos el valor 1 a todas las variables de una sola vez
+  a = b = c = d = e = f = 1; // Esto es una forma rápida de igualar muchas variables al mismo valor
+
+  return 0;
 }

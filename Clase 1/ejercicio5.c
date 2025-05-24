@@ -11,7 +11,7 @@ primero en el orden original y luego, en orden inverso.
 void mensaje();
 
 // Función principal del programa
-void main()
+int main()
 {
   // Arreglo para guardar los 5 valores que va a ingresar el usuario
   int valores[5]; // valores[0], valores[1], ..., valores[4]
@@ -32,6 +32,8 @@ void main()
   {
     printf("valor %d: %d \n", i - 1, valores[i - 1]);
   }
+
+  return 0; // Indicamos que el programa terminó correctamente
 }
 
 // Definición de la función mensaje
