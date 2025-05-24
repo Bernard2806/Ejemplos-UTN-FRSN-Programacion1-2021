@@ -5,7 +5,6 @@
 3. Realizar un programa que solicite 20 números y los almacene en un array (vector).  
    Posteriormente se pedirá el ingreso de un número y se debe informar si el mismo se encuentra en el vector o no.  
    En caso que se encuentre, informar cuántas veces figura.  
-4. *(vacío)*  
 
 ---
 
