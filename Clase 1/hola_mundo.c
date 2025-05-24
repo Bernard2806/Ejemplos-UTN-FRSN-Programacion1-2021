@@ -1,66 +1,73 @@
-#include <stdio.h> 
-#define PI = 3.14159
-#include <stdbool.h> 
+#include <stdio.h>   // Librería estándar para entrada/salida
+#include <stdbool.h> // Librería para usar el tipo bool (true/false)
 
-void main()
+// Definición correcta de una constante
+#define PI 3.14159 // Definimos PI como constante (sin el signo igual)
+
+// Función principal del programa
+int main(void)
 {
-  /* 
-  int : integer = entero 
-  son comentarios de mas 
-  de una linea   
-  */  
- 
-  int dia = 1;
+  /*
+    Esto es un comentario de varias líneas.
+    `int` representa un número entero.
+  */
 
-  // switch (dia)
-  // {
-  //   case 1:
-  //     printf("este es dia 1\n"); // esto es un comentario
-  //     // break;
-  //   case 2:
-  //     printf("este es dia 2\n"); // esto es un comentario
-  //     break;
-  //   case 3:
-  //     printf("este es dia 3\n"); // esto es un comentario
-  //     break;
-  //   case 4:
-  //     printf("este es dia 4\n"); // esto es un comentario
-  //     break;
+  int dia = 1; // Variable entera llamada 'dia', inicializada en 1
 
-  //   default:
-  //     printf("ninguno de los anteriores\n"); // esto es un comentario
-  //     break;
-  // }
-
-  // i++ => i = i + 1; 
-  for (int i = 0; i < 10; i++)
+  // Estructura condicional múltiple (switch)
+  // Muestra un mensaje dependiendo del valor de 'dia'
+  switch (dia)
   {
-    // printf("%d\n", i); 
+  case 1:
+    printf("Este es día 1\n");
+    break; // Salimos del switch una vez que se ejecuta este caso
+
+  case 2:
+    printf("Este es día 2\n");
+    break;
+
+  case 3:
+    printf("Este es día 3\n");
+    break;
+
+  case 4:
+    printf("Este es día 4\n");
+    break;
+
+  default:
+    printf("Ninguno de los anteriores\n");
+    break;
   }
 
-  dia = 30;
+  // Bucle for: se repite mientras i < 10
+  for (int i = 0; i < 10; i++) // i++ es lo mismo que i = i + 1
+  {
+    printf("%d\n", i); // Imprime los números del 0 al 9
+  }
 
-  // primero evalua la condicion 
+  // Cambiamos el valor de 'dia' para probar los bucles
+  dia = 3;
+
+  // Bucle while: evalúa la condición antes de ejecutar
   while (dia < 5)
   {
-    printf("dia %d menor que 5\n", dia); 
+    printf("while: día %d es menor que 5\n", dia);
     dia = dia + 1;
   }
 
-  // primero ejecuta el bloque y luego evalua 
+  // Bucle do-while: ejecuta al menos una vez, evalúa después
   do
   {
-    printf("dia %d menor que 5\n", dia); 
+    printf("do-while: día %d es menor que 5\n", dia);
     dia = dia + 1;
   } while (dia < 5);
-  
-  
-  
 
-  //const float PI = 3.14159; 
-  //pi = 4; 
+  // Constantes no se deben modificar
+  // PI es constante definida por #define, no necesita declaración adicional
 
-  // printf("Hola Mundo\n"); // comentario linea 
-  // printf("saludos");
-  //return 0;
+  // Saludo simple (podés descomentarlo si querés imprimir algo)
+  // printf("Hola Mundo\n");
+  // printf("Saludos\n");
+
+  return 0; // Fin del programa
 }
