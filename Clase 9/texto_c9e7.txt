@@ -1,5 +1,0 @@
-Pablo 1.72 39
-Juan  1.87 25
-Pedro 1.65 32
-Rolo  1.83 28
-Cacho 1.55 30
