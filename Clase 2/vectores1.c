@@ -1,70 +1,49 @@
-#include <stdio.h> 
-#include "saltear_linea.c"; 
+#include <stdio.h>
 
-// declaracion o prototipo 
-// int sumar(int,int); 
-// definicion 
+// Función que suma dos valores enteros y devuelve el resultado
 int sumar(int valor1, int valor2)
 {
-  int sumando = 0;  // variable auxliar de la funcion 
-  // solo visible aca adentro
-  sumando = valor1+valor2; 
-  return sumando; 
+  int sumando = 0; // variable auxiliar, solo visible dentro de esta función
+  sumando = valor1 + valor2;
+  return sumando;
 }
 
-// void saltear_linea() // procedimiento 
-// {
-//   printf("\n");  
-// }
-
-
-void main()
+int main()
 {
-  // declaracion y definicion 
-  // int valores[] = {10, 20, 30, 40, 50}; // 5 elementos 
-  // indice: 0..n-1
-  
-  int suma = 0; // acumulador 
+  int suma = 0; // acumulador para ir sumando los elementos del vector
   int cant_elementos = 0;
-  
-  // printf("Elemento 3: %d \n", valores[3]);
-  printf("ingrese tama%co del vector: ", 164);
-  scanf("%d", &cant_elementos); 
 
-  int valores[cant_elementos]; 
+  // Pedimos al usuario el tamaño del vector
+  printf("ingrese tamaño del vector: ");
+  scanf("%d", &cant_elementos);
 
+  int valores[cant_elementos]; // declaramos el vector con el tamaño indicado
+
+  // Leemos los valores del usuario y los vamos sumando
   for (int i = 0; i < cant_elementos; i++)
   {
     printf("ingrese elemento %d: ", i);
-    scanf("%d", &valores[i]) ; 
-    // valores[i] = 0;
-    printf("posicion %d = %d ", i, valores[i]); 
-    saltear_linea(); 
-    // suma = suma + valores[i] ; 
-    suma = sumar(suma, valores[i]); 
-     
+    scanf("%d", &valores[i]);
+
+    printf("posicion %d = %d \n", i, valores[i]); // mostramos el valor ingresado con salto de línea
+
+    suma = sumar(suma, valores[i]); // usamos la función sumar para acumular
   }
 
-  printf("Suma de elementos: %d ", suma);
-  saltear_linea(); 
-  saltear_linea(); 
-  saltear_linea(); 
-  
-  printf("en orden inverso: ");
-  saltear_linea(); 
+  printf("Suma de elementos: %d \n\n\n", suma); // mostramos la suma total y varios saltos de línea
 
-  for (int i = cant_elementos-1; i >= 0; i--)
+  printf("en orden inverso: \n");
+
+  // Mostramos los elementos del vector en orden inverso
+  for (int i = cant_elementos - 1; i >= 0; i--)
   {
-    printf("posicion %d = %d ", i, valores[i]);
-    saltear_linea(); 
+    printf("posicion %d = %d \n", i, valores[i]);
   }
 
-  // int v[3]; 
-  // indice: 0..n-1 
-  // v[0], v[1], v[2] 
-  // v[3] NO existe 
+  // Comentarios sobre índices de vectores:
+  // Los índices van de 0 a n-1
+  // Por ejemplo, para un vector de 3 elementos: v[0], v[1], v[2]
+  // v[3] no existe, acceder a esa posición genera error
 
-
-
+  return 0;
 }
-

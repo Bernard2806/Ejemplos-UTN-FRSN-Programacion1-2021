@@ -1,7 +1,7 @@
 #include <stdio.h>  // Para usar printf
 #include <string.h> // Para usar strcmp (función para comparar strings)
 
-main()
+int main()
 {
   char s1[] = "hola"; // Defino la cadena s1 con el texto "hola"
   char s2[] = "chau"; // Defino la cadena s2 con el texto "chau"
@@ -28,4 +28,6 @@ main()
   {
     printf("strcmp s1 y s2 distintos\n"); // Si las cadenas son distintas, entra acá
   }
+
+  return 0; // Indicamos que el programa terminó correctamente
 }
